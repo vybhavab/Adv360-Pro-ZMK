@@ -1,9 +1,3 @@
-macro_left-desktop: macro_left-desktop{
-compatible = "zmk,behavior-macro";
-label = "macro_left-desktop";
-#binding-cells = <0>;
-bindings = <&kp LCTRL>, <&kp LEFT>;
-};
 macro_quotes: macro_quotes{
 compatible = "zmk,behavior-macro";
 label = "macro_quotes";
