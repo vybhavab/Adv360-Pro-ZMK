@@ -22,6 +22,7 @@
 #define KEYPAD 1
 #define FN 2
 #define MOD 3
+#define GAMING 4
 
 #define HYP LS(LC(LA(LGUI)))
 #define HYPER(key) LS(LC(LA(LG(key))))
@@ -241,10 +242,20 @@
         layer_mod {
             bindings = <
   &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                             &none                                                                              &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &none
-  &none         &none         &none         &none         &none         &none                       &bootloader                                                                         &bootloader         &none         &none         &none         &none         &none   &none
+  &none         &tog DEFAULT         &tog GAMING         &none         &none         &none                       &bootloader                                                                         &bootloader         &none         &none         &none         &none         &none   &none
   &none         &none         &none         &none         &none         &none            &rgb_ug RGB_MEFS_CMD 5  &bt BT_CLR   &none   &none   &none  &bt BT_CLR  &bt BT_CLR  &rgb_ug RGB_MEFS_CMD 5         &none         &none         &none         &none         &none   &none
   &none         &none         &none         &none         &none         &none                             &none       &none   &none   &none   &none       &none       &none                   &none         &none         &none         &none         &none         &none   &none
   &none         &none         &none    &bl BL_INC    &bl BL_DEC                                 &rgb_ug RGB_TOG  &bl BL_TOG   &none                       &none  &bl BL_TOG         &rgb_ug RGB_TOG                  &bl BL_INC    &bl BL_DEC         &none         &none   &none
+            >;
+        };
+
+        gaming_layer {
+            bindings = <
+   &pipe_grave                     &kp N1       &kp N2      &kp N3        &kp N4     &kp N5     &kp C_PP                                                                                            &kp LC(LG(Q))  &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS
+   &kp TAB                         &kp Q           &kp W           &kp E              &kp R           &kp T           &mo KEYPAD                                                                                          &discord_mute      &kp Y                  &kp U            &kp I              &kp O      &kp P   &bsls_hash
+   &lt KEYPAD ESC                  &kp A           &kp S             &kp D           &kp F          &kp G             &kp DEL        &kp C_PREV    &kp C_NEXT        &none            &none          &kp C_VOLUME_DOWN  &kp C_VOLUME_UP      &kp C_MUTE      &kp H                  &kp J            &kp K              &kp L   &kp SEMI    &lt FN SQT
+   &kp LSHFT                       &kp Z           &kp X            &kp C           &kp V          &kp B              &none          &none         &prev_desktop    &none             &none          &next_desktop &none      &none      &kp N                  &kp M        &kp COMMA     &kp DOT   &kp FSLH  &mt RSHFT RIGHT_PARENTHESIS
+   &kp LEFT_CONTROL            &dlr_tild       &mo MOD         &kp LEFT             &kp RIGHT                                    &kp SPACE      &kp LEFT_COMMAND  &kp LEFT_CONTROL &kp LEFT_ALT   &kp ENTER  &kp BSPC                            &kp UP         &kp DOWN    &exlm_perc        &at_crt      &kp LS(LC(LALT))
             >;
         };
 
